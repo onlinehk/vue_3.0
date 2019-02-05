@@ -40,12 +40,14 @@ const { mapState, mapActions } = createNamespacedHelpers("count");
 export default {
     data() {
         return {
-            items: ['123', '456']
+            items: ['測試一', '測試二']
         }
     },
     mounted() {
         console.log('mounted');
-        this.$store.dispatch('count/actionGetData', 'one');
+        if (!this.$store.state.count.get_data) {
+            this.$store.dispatch('count/actionGetData', 'one');
+        }
     },
     computed: {
         ...mapState({
