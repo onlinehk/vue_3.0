@@ -1,5 +1,8 @@
 <template>
     <div class="container">
+        <!-- loader -->
+        <div :class="loader" />
+
         <h2>count:<span class="count"> {{ count }}</span></h2>
         <button class="btn btn-success" @click="actionIncrease(1)"> + </button>&nbsp;
         <button class="btn btn-success" @click="actionDecrease(1)"> - </button>
@@ -30,6 +33,11 @@
             </div>
         </div>
 
+    <br /><br /><br /><br />
+    <button class="btn btn-info" @click="check()">Check</button><br/><br/>
+
+    {{id}}<br />{{p2}}
+    
     </div>
 </template>
 
@@ -40,7 +48,9 @@ const { mapState, mapActions } = createNamespacedHelpers("count");
 export default {
     data() {
         return {
-            items: ['測試一', '測試二']
+            items: ['測試一', '測試二'],
+            id: this.$route.params.id,
+            p2: this.$route.params.p2,
         }
     },
     mounted() {
@@ -48,19 +58,30 @@ export default {
         if (!this.$store.state.count.get_data) {
             this.$store.dispatch('count/actionGetData', 'one');
         }
+        this.check();
     },
     computed: {
         ...mapState({
             count: 'countNum',
             get_data: 'get_data'
         }),
+        loader() {
+            return {
+                "loader": true,
+                "loader-default": true,
+                "is-active": this.$store.state.count.is_loading,
+            }
+        }
     },
     methods: {
         ...mapActions([
             'actionIncrease',
             'actionDecrease',
             'actionGetData'
-        ])
+        ]),
+        check() {
+            console.log('check');
+        }
     },
 }
 </script>

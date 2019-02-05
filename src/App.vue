@@ -3,7 +3,7 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/count">Count</router-link>
+      <router-link to="/count/aa/bb">Count</router-link>
     </div>
     <router-view/>
   </div>
@@ -12,6 +12,7 @@
 <style lang="scss">
 @import '../node_modules/bootstrap/dist/css/bootstrap.css';
 @import '../node_modules/bootstrap-vue/dist/bootstrap-vue.css';
+@import '../node_modules/pure-css-loader/dist/css-loader.css';
 
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

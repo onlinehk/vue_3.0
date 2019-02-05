@@ -6,12 +6,14 @@ const types = {
     INCREASE: nameSpace + '/INCREASE',
     DECREASE: nameSpace + '/DECREASE',
     GET_DATA: nameSpace + '/GET_DATA',
+    LOADING: nameSpace + '/LOADING',
 }
 
 // count state 必須是 Object
 const state = {
     countNum: 10,
-    get_data: false
+    get_data: false,
+    is_loading: false
 }
 
 // actions 也是以 Object 形式建構。
@@ -24,6 +26,7 @@ const actions = {
     },
     actionGetData({ commit }, one) {
         console.log('actionGetData');
+        commit(types.LOADING);
         let url;
         if (one) {
             url = 'https://jsonplaceholder.typicode.com/todos/1';
@@ -52,6 +55,10 @@ const mutations = {
     },
     [types.GET_DATA](state, payload) {
         state.get_data = payload;
+        state.is_loading = false;
+    },
+    [types.LOADING](state) {
+        state.is_loading = true;
     },
 }
 

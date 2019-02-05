@@ -21,7 +21,7 @@ export default new Router({
       component: About
     },
     {
-      path: '/count',
+      path: '/count/:id?/:p2?',
       name: 'count',
       component: Count
     }
