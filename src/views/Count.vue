@@ -38,6 +38,7 @@
 
     {{id}}<br />{{p2}}
     
+    <div class="test">tests</div>
     </div>
 </template>
 
@@ -59,6 +60,7 @@ export default {
             this.$store.dispatch('count/actionGetData', 'one');
         }
         this.check();
+        console.log($('.test').html());
     },
     computed: {
         ...mapState({
