@@ -26,7 +26,7 @@ module.exports = {
         ]
     },
     productionSourceMap: false,
-    lintOnSave: false,
+    // lintOnSave: false,
     chainWebpack: config => {
         config.entry.app = ["babel-polyfill", resolve('src/main.js')],
             config.resolve.alias
