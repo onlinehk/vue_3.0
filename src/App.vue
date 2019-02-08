@@ -5,10 +5,10 @@
         <router-link to="/about">About</router-link> |
         <router-link to="/count/aa/bb">Count</router-link>
         </div>
-        <transition mode="out-in"
-        enter-active-class="animated fadeIn"
-        leave-active-class="animated fadeOut">
+        <transition mode="out-in" :enter-active-class="enterTransition" :leave-active-class="leaveTransition">
+            <!-- <navigation> -->
             <router-view/>
+            <!-- </navigation> -->
         </transition>
     </div>
 </template>
@@ -41,3 +41,28 @@
 }
 
 </style>
+
+<script>
+export default {
+    data () {
+        return {
+            enterTransition: 'animated fadeIn',
+            leaveTransition: 'animated fadeOut',
+        }
+    },
+//   created() {
+//     this.$navigation.on('forward', (to, from) => {
+//       this.enterTransition = 'animated fadeInRight';
+//       this.leaveTransition = 'animated fadeOutLeft';
+//     })
+//     this.$navigation.on('back', (to, from) => {
+//       this.enterTransition = 'animated fadeInLeft';
+//       this.leaveTransition = 'animated fadeOutRight';
+//     })
+//     this.$navigation.on('replace', (to, from) => {
+//       this.enterTransition = 'animated fadeIn';
+//       this.leaveTransition = 'animated fadeOut';
+//     })
+//   }
+}
+</script>

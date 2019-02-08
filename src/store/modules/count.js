@@ -11,7 +11,7 @@ const types = {
 
 // count state 必須是 Object
 const state = {
-    countNum: 10,
+    countNum: 1,
     get_data: false,
     is_loading: false
 }
