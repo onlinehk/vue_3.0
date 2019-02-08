@@ -39,6 +39,7 @@
     {{id}}<br />{{p2}}
     
     <div class="test">tests</div>
+    <div class="test2">aaa</div>
     </div>
 </template>
 
@@ -60,7 +61,8 @@ export default {
             this.$store.dispatch('count/actionGetData', 'one');
         }
         this.check();
-        console.log($('.test').html());
+        // console.log($('.test').html());
+        $('.test2').html($('.test').html());
     },
     computed: {
         ...mapState({
