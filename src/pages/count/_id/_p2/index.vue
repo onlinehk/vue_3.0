@@ -46,7 +46,6 @@
 <script>
 import { createNamespacedHelpers } from "vuex";
 const { mapState, mapActions } = createNamespacedHelpers("count");
-
 export default {
     data() {
         return {
