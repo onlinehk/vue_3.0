@@ -3,7 +3,8 @@
         <div id="nav">
             <router-link to="/">Home</router-link> |
             <router-link to="/about">About</router-link> |
-            <router-link to="/count/aa/bb">Count</router-link>
+            <router-link to="/count/aa/bb">Count</router-link> |
+            <router-link to="/count/aa/p2">Count 2</router-link>
         </div>
         <transition mode="out-in" :enter-active-class="enterTransition" :leave-active-class="leaveTransition">
             <!-- <navigation> -->

@@ -3,6 +3,19 @@
         <!-- loader -->
         <div :class="loader" />
 
+        <div style="height:50px">
+            <transition mode="out-in" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+                <div v-if="(this.$route.params.p2 == 'p2')" key="1">
+                    <h3>Page 2</h3>
+                </div>
+                <div v-else key="2">
+                    <h3>Page 1</h3>
+                </div>
+            </transition>
+        </div>
+    
+    <br />
+
         <h2>count:<span class="count"> {{ count }}</span></h2>
         <button class="btn btn-success" @click="actionIncrease(1)"> + </button>&nbsp;
         <button class="btn btn-success" @click="actionDecrease(1)"> - </button>
