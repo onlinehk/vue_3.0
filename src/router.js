@@ -17,6 +17,10 @@ export default new Router({
       path: '/',
       component: RouterLayout,
       children: routes
+    },
+    {
+      path: '*',
+      redirect: '/404'
     }
   ]
 })

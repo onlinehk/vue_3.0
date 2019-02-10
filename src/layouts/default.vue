@@ -1,11 +1,6 @@
 <template>
     <div>
-        <div id="nav">
-            <router-link to="/">Home</router-link> |
-            <router-link to="/about">About</router-link> |
-            <router-link to="/count/aa/bb">Count</router-link> |
-            <router-link to="/count/aa/p2">Count 2</router-link>
-        </div>
+        <navMenu />
         <transition mode="out-in" :enter-active-class="enterTransition" :leave-active-class="leaveTransition">
             <!-- <navigation> -->
             <router-view/>
@@ -26,17 +21,6 @@ html, body {
     text-align: center;
     color: #2c3e50;
 }
-#nav {
-    padding: 30px;
-    a {
-        font-weight: bold;
-        color: #2c3e50;
-        &.router-link-exact-active {
-        color: #42b983;
-        font-size: 20px;
-        }
-    }
-}
 .animated {
     animation-duration: 0.5s;
 }
@@ -44,7 +28,12 @@ html, body {
 </style>
 
 <script>
+import navMenu from '@/components/navMenu.vue'
+
 export default {
+    components: {
+        navMenu
+    },
     data () {
         return {
             enterTransition: 'animated fadeIn',
