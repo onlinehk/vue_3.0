@@ -20,7 +20,7 @@ export default new Router({
     },
     {
       path: '*',
-      redirect: '/404'
+      component: () => import('@/pages/404.vue') // 404 page not found
     }
   ]
 })
