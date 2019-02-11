@@ -49,7 +49,7 @@
     <br /><br /><br /><br />
     <button class="btn btn-info" @click="check()">Check</button><br/><br/>
 
-    {{id}}<br />{{p2}}
+    {{this.$route.params.id}}<br />{{this.$route.params.p2}}
     
     <div class="test">tests</div>
     <div class="test2">aaa</div>
@@ -58,13 +58,14 @@
 
 <script>
 import { createNamespacedHelpers } from "vuex";
+import about from '@/pages/count/_id/_p2/index.vue'
 const { mapState, mapActions } = createNamespacedHelpers("count");
 export default {
     data() {
         return {
             items: ['測試一', '測試二'],
-            id: this.$route.params.id,
-            p2: this.$route.params.p2,
+            // id: this.$route.params.id,
+            // p2: this.$route.params.p2,
         }
     },
     mounted() {
