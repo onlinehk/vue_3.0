@@ -58,7 +58,6 @@
 
 <script>
 import { createNamespacedHelpers } from "vuex";
-import about from '@/pages/count/_id/_p2/index.vue'
 const { mapState, mapActions } = createNamespacedHelpers("count");
 export default {
     data() {
