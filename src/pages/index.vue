@@ -3,10 +3,10 @@
         <img alt="Vue logo" src="../assets/images/logo.png">
         <HelloWorld msg="Welcome to Your Vue.js App"/>
         <MyTest title="Testing 1234">
-        <br />
-        <span style="color:red">
-            my test
-        </span>
+            <br />
+            <span style="color:red">
+                my test
+            </span>
         </MyTest>
     </div>
 </template>
