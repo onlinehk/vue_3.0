@@ -12,16 +12,34 @@
                 </div>
             </div>
         </div>
+        <br />
+        <h2>Input lazy call ajax</h2>
+        <input type="text" v-model="texts" v-debounce="search">
+        <br />
+        {{input_text}}
     </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 export default {
+    data () {
+        return {
+            texts: '',
+            input_text: ''
+        }
+    },
     computed: {
         ...mapState({
             get_data: state => state.count.get_data
         }),
     },
+    methods: {
+        search () {
+            // 實際要進行的操作 axios.get('')之類的
+            console.log('text is:' + this.texts)
+            this.input_text = this.texts;
+        }
+    }
 }
 </script>
